@@ -5,18 +5,45 @@
 
 2 - No design system - Hat to extract all design style by myself (colors, font-size, etc)
 
-3 - No use of Flexbox Layout or Group in Figma
+3 - No use of Flexbox Layout or Group in Figma. It would be really great for properties like padding, margin, and space between components.
 
 4 - No use of 8pt Grid
 
 5 - My typing could be optimized but not so much time
 
+6 - I've been trying to make it stick to the design but if you want me to adapt it to my criteria, please ask
+    By criteria, I mean Design good practices like the one I speak about above
+    I've realized that the template did not follow some Design rules which could be interesting to work with.
+
+    That's why you'll find some weird min-height or min-width properties, like 390px
+
+  7 - Everything is dynamic. So there is no fixed height/width, but min/max height/width.
+      It's important to keep in mind that screen sizes are multiples and that text size can
+      change in function of the translation
+
+  8 - It's responsive and semantic HTML
+
+  9 -
+
+
+7 - Padding and Margin were not systemized (cf. 3)
+
+8 - I decided to use / to not use some properties because of their supports (CanIUse)
+
+
+9 - Permit me to warn you that some tags of your site are not well semantically design
+    For example, on https://flair.hr/en/blog, button should be wrapped inside the button tag and not a div
+
 
 TODO :
 - Colors
 - Fonts
+- Shadows
+- Border Radius
 - Favicon
 - Optimize Files and Weight
 - Responsive
 - Animations
+- Hover effect to buttons, for example
+- Refactor Global CSS and delete some rules for colors, font-size, etc.
 

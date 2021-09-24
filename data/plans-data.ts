@@ -4,13 +4,23 @@ interface MonthlyPrices {
   performance: number;
 }
 
+export interface PlanCard {
+  emphasized: boolean;
+  title: "Essential" | "Growth" | "Performance";
+  description: string;
+  monthlyPrice: number;
+  yearlyPrice: number;
+  features: Array<string>;
+  featuresPlus: Array<string>;
+}
+
 const monthlyPrices: MonthlyPrices = {
   essentialPlan: 8,
   growthPlan: 14,
   performance: 20,
 };
 
-const GrowthCard = {
+const GrowthCard: PlanCard = {
   emphasized: true,
   title: "Growth",
   description:
