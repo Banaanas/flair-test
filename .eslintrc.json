@@ -1,0 +1,62 @@
+{
+  "extends": [
+    "airbnb",
+    "airbnb/hooks",
+    "airbnb-typescript",
+    "next",
+    "next/core-web-vitals",
+    "plugin:eslint-comments/recommended",
+    "plugin:json/recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "plugins": [
+    "@typescript-eslint",
+    "import",
+    "prettier"
+  ],
+  "rules": {
+    "@typescript-eslint/no-explicit-any": 2,
+    // https://github.com/prettier/eslint-plugin-prettier
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "prettier/prettier": "error",
+    "import/extensions": "off",
+    // Next.js Link
+    "jsx-a11y/anchor-is-valid": [
+      "error",
+      {
+        "components": ["Link"],
+        "specialLink": ["hrefLeft", "hrefRight"],
+        "aspects": ["invalidHref", "preferButton"]
+      }
+    ],
+
+    // Disable forbid-prop-types rule
+    "react/prop-types": 0,
+    "react/require-default-props": 0,
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".js", ".jsx", "tsx"]
+      }
+    ],
+    "react/jsx-pascal-case": [
+      1,
+      {
+        "allowAllCaps": false
+      }
+    ],
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off"
+  }
+}

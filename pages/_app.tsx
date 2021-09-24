@@ -1,7 +1,14 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import "../styles/normalize.css"; // Next.js authorizes Materialize.css (Global CSS) to be imported ONLY from _app.js
+import { AnimatePresence } from "framer-motion";
+import type { AppProps } from "next/app";
+import Layout from "../Components/Layout";
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
-}
-export default MyApp
+const App = ({ Component, pageProps }: AppProps) => (
+  <Layout>
+    <AnimatePresence initial={false} exitBeforeEnter>
+      <Component {...pageProps} />
+    </AnimatePresence>
+  </Layout>
+);
+
+export default App;
