@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 const Button = styled.button`
   all: unset;
   font-size: 15px;
+  cursor: pointer;
 `;
 
 const PlansButton = ({ label }: { label: string }) => {

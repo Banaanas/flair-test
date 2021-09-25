@@ -1,12 +1,18 @@
+import styled from "@emotion/styled";
+
 interface RectangleProps {
   width?: number;
   color: string;
 }
 
-const SVGRectangle = ({ width = 14, color}: RectangleProps) => (
-  <svg
+const StyledSVG = styled.svg`
+  background: aqua;
+  hei
+`;
+
+const SVGRectangle = ({ width = 14, color }: RectangleProps) => (
+  <StyledSVG
     width={width}
-    height={width * 2}
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
@@ -18,7 +24,7 @@ const SVGRectangle = ({ width = 14, color}: RectangleProps) => (
       transform="rotate(20 9.75 0)"
       fill={color}
     />
-  </svg>
+  </StyledSVG>
 );
 
 export default SVGRectangle;

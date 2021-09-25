@@ -1,8 +1,6 @@
-interface MonthlyPrices {
-  essentialPlan: number;
-  growthPlan: number;
-  performance: number;
-}
+import essentialPlan from "./essential-plan";
+import growthPlan from "./growth-plan";
+import performancePlan from "./performance-plan";
 
 export interface PlanCard {
   emphasized: boolean;
@@ -10,25 +8,11 @@ export interface PlanCard {
   description: string;
   monthlyPrice: number;
   yearlyPrice: number;
-  features: Array<string>;
-  featuresPlus: Array<string>;
+  features: Array<string> | undefined;
+  featuresPlus: Array<string> | undefined;
+  featuresPremium: Array<string> | undefined;
 }
 
-const monthlyPrices: MonthlyPrices = {
-  essentialPlan: 8,
-  growthPlan: 14,
-  performance: 20,
-};
+const basePlans: Array<PlanCard> = [essentialPlan, growthPlan, performancePlan];
 
-const GrowthCard: PlanCard = {
-  emphasized: true,
-  title: "Growth",
-  description:
-    "Understand the true pulse of your organization with regular Check-ins and guided 1-on-1s, and show meaningful appreciation when it matters most using High Fives.\n",
-  monthlyPrice: monthlyPrices.growthPlan,
-  yearlyPrice: monthlyPrices.growthPlan * 2,
-  features: ["Core HR", "Payroll", "Employee HUB"],
-  featuresPlus: ["Performance management", "Shift planning"],
-};
-
-export default GrowthCard;
+export default basePlans;

@@ -23,7 +23,7 @@
 
   8 - It's responsive and semantic HTML
 
-  9 -
+  9 - I've used the exact same Icons you use (mostly SVG files that I converted into React Components, to make them adaptables)
 
 
 7 - Padding and Margin were not systemized (cf. 3)
@@ -34,6 +34,12 @@
 9 - Permit me to warn you that some tags of your site are not well semantically design
     For example, on https://flair.hr/en/blog, button should be wrapped inside the button tag and not a div
 
+10 - Some groups on Figma are incoherent
+
+11 - Because elements are not organized by groups, as it should be in CSS, it's
+difficult to define margins, padding between those (inexistant) groups and their parents
+
+12 - All Tree elements for 1440px
 
 TODO :
 - Colors
@@ -46,4 +52,6 @@ TODO :
 - Animations
 - Hover effect to buttons, for example
 - Refactor Global CSS and delete some rules for colors, font-size, etc.
-
+- corner circles
+- shadow cards
+- Gilroy Fonts

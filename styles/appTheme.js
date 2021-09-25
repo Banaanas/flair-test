@@ -128,7 +128,7 @@ const appTheme = {
 
   /* OTHERS */
   globalMinWidth: "320px",
-  globalMaxWidth: "1100px",
+  globalMaxWidth: "1440px",
   queries: QUERIES,
 };
 
