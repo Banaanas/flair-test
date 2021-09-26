@@ -41,6 +41,13 @@ difficult to define margins, padding between those (inexistant) groups and their
 
 12 - All Tree elements for 1440px
 
+13 - Use of a custom Hook to make disappears when click outside
+
+
+14 - Design Not optimized for development optimization (and the React components architecture)
+    For example, simple features have different layout between Essential and Growth/Performance
+
+
 TODO :
 - Colors
 - Fonts
@@ -55,3 +62,5 @@ TODO :
 - corner circles
 - shadow cards
 - Gilroy Fonts
+- Regarder console avant déploiement
+- Delete Notes

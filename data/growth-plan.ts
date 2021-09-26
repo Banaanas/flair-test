@@ -9,8 +9,71 @@ const growthPlan: PlanCard = {
   monthlyPrice: monthlyPrices.growthPlan,
   yearlyPrice: monthlyPrices.growthPlan * 2,
   features: undefined,
-  featuresPlus: ["Core HR", "Recruiting", "Payroll", "Employee HUB"],
-  featuresPremium: ["Performance management", "Shift planning"],
+  featuresPlus: [
+    {
+      title: "Core HR",
+      description: "Minimize HR headaches so you can get back to business.\n",
+      list: [
+        "Hiring & Onboarding",
+        "Employee database",
+        "Document management",
+        "Reporting",
+      ],
+    },
+    {
+      title: "Payroll",
+      description: "Minimize HR headaches so you can get back to business.\n",
+      list: [
+        "Hiring & Onboarding",
+        "Employee database",
+        "Document management",
+        "Reporting",
+      ],
+    },
+    {
+      title: "Recruiting",
+      description: "Minimize HR headaches so you can get back to business.\n",
+      list: [
+        "Hiring & Onboarding",
+        "Employee database",
+        "Document management",
+        "Reporting",
+      ],
+    },
+    {
+      title: "Employee HUB",
+      description: "Minimize HR headaches so you can get back to business.\n",
+      list: [
+        "Hiring & Onboarding",
+        "Employee database",
+        "Document management",
+        "Reporting",
+      ],
+    },
+  ],
+  featuresPlusMore: undefined,
+  featuresPremium: [
+    {
+      title: "Performance management",
+      description: "Minimize HR headaches so you can get back to business.\n",
+      list: [
+        "Hiring & Onboarding",
+        "Employee database",
+        "Document management",
+        "Reporting",
+      ],
+    },
+    {
+      title: "Shift planning",
+      description: "Minimize HR headaches so you can get back to business.\n",
+      list: [
+        "Hiring & Onboarding",
+        "Employee database",
+        "Document management",
+        "Reporting",
+      ],
+    },
+  ],
 };
 
 export default growthPlan;

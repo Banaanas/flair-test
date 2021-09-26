@@ -130,6 +130,8 @@ const appTheme = {
   globalMinWidth: "320px",
   globalMaxWidth: "1440px",
   queries: QUERIES,
+
+  paddingList: "16px",
 };
 
 export default appTheme;

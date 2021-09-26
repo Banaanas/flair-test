@@ -1,9 +1,10 @@
 import styled from "@emotion/styled";
-import CheckIcon from "../../Icons/CheckIcon";
+import React, { useRef, useState } from "react";
 import { PlanCard } from "../../../data/plans-data";
 import { paddingLi } from "./FeaturesList";
-import InformationIcon from "../../Icons/InformationIcon";
 import InformationButton from "./InformationButton";
+import useOnClickOutside from "../../../custom-hooks/useOnClickOutside";
+import DetailsBubble from "./DetailsBubble";
 
 type Features = Pick<PlanCard, "featuresPlus">;
 
@@ -20,6 +21,7 @@ const List = styled.ul`
 `;
 
 const Item = styled.li`
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -27,19 +29,39 @@ const Item = styled.li`
   padding: 0;
 `;
 
-const Feature = styled.span`
-`;
+const Feature = styled.span``;
 
 const FeaturesPlusList = ({ featuresPlus }: Features) => {
+  const [isDisplayed, setIsDisplayed] = useState<false | number>(false);
+  const ref = useRef(null);
+
+  const handleToggle = (index: number) => {
+    setIsDisplayed(index);
+  };
+
+  const handleClickOutside = () => {
+    setIsDisplayed(false);
+  };
+
+  useOnClickOutside(ref, handleClickOutside);
+
   if (!featuresPlus) return null;
 
   return (
     <List>
       {featuresPlus.map((featurePlus, index) => (
         // eslint-disable-next-line react/no-array-index-key
-        <Item className="features-plus" key={`${index}-featurePlus`}>
-          <Feature>{featurePlus}</Feature>
-          <InformationButton/>
+        <Item
+          className="features-plus"
+          key={`${index}-featurePlus`}
+          onClick={() => handleToggle(index)}
+        >
+          <Feature>{featurePlus.title}</Feature>
+          {isDisplayed === index ? (
+            <DetailsBubble refBubble={ref} feature={featurePlus} />
+          ) : null}
+
+          <InformationButton />
         </Item>
       ))}
     </List>

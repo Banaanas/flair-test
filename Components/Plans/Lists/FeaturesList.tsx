@@ -6,15 +6,17 @@ type Features = Pick<PlanCard, "features">;
 
 export const paddingLi = "16px";
 
-const List = styled.ul`
+const List = styled.ul<{ secondary: boolean | undefined }>`
   all: unset;
   justify-self: flex-start;
   width: 100%;
   list-style: none;
 
   /* All Items except the last one */
+  /* Padding is different for Bubble List */
   .features:not(last-of-type) {
-    padding-bottom: ${paddingLi};
+    padding-bottom: ${({ secondary }) =>
+      !secondary ? paddingLi : `calc(${paddingLi}/2)`};
   }
 `;
 
@@ -28,15 +30,21 @@ const Feature = styled.span`
   margin-left: 12px;
 `;
 
-const FeaturesList = ({ features }: Features) => {
+interface InterfaceFeaturesList {
+  features: Array<Features> | Array<string>;
+  secondary?: boolean;
+}
+
+/* This component is used both for normal Features List and details List */
+const FeaturesList = ({ features, secondary }: InterfaceFeaturesList) => {
   if (!features) return null;
 
   return (
-    <List>
+    <List secondary={secondary}>
       {features.map((feature, index) => (
         // eslint-disable-next-line react/no-array-index-key
         <Item className="features" key={`${index}-feature`}>
-          <CheckIcon width="24px" />
+          <CheckIcon secondary={secondary} width="24px" />
           <Feature>{feature}</Feature>
         </Item>
       ))}

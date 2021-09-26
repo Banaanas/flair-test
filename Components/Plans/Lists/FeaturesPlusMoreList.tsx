@@ -1,13 +1,13 @@
 import styled from "@emotion/styled";
+import React, { useRef, useState } from "react";
 import { PlanCard } from "../../../data/plans-data";
 import PlusIcon from "../../Icons/PlusIcon";
 import InformationButton from "./InformationButton";
-import appTheme from "../../../styles/appTheme";
-import React, { useRef, useState } from "react";
 import useOnClickOutside from "../../../custom-hooks/useOnClickOutside";
 import DetailsBubble from "./DetailsBubble";
+import appTheme from "../../../styles/appTheme";
 
-type Features = Pick<PlanCard, "featuresPremium">;
+type Features = Pick<PlanCard, "featuresPlusMore">;
 
 const IconWrapper = styled.div`
   width: 100%;
@@ -21,7 +21,7 @@ const List = styled.ul`
   list-style: none;
 
   /* All Items except the last one */
-  .features-premium:not(last-of-type) {
+  .features-plus-more:not(last-of-type) {
     padding-bottom: ${appTheme.paddingList};
   }
 `;
@@ -36,7 +36,7 @@ const Item = styled.li`
 
 const Feature = styled.span``;
 
-const FeaturesPremiumList = ({ featuresPremium }: Features) => {
+const FeaturesPlusMoreList = ({ featuresPlusMore }: Features) => {
   const [isDisplayed, setIsDisplayed] = useState<false | number>(false);
   const ref = useRef(null);
 
@@ -50,7 +50,7 @@ const FeaturesPremiumList = ({ featuresPremium }: Features) => {
 
   useOnClickOutside(ref, handleClickOutside);
 
-  if (!featuresPremium) return null;
+  if (!featuresPlusMore) return null;
 
   return (
     <>
@@ -58,16 +58,16 @@ const FeaturesPremiumList = ({ featuresPremium }: Features) => {
         <PlusIcon width="10px" />
       </IconWrapper>
       <List>
-        {featuresPremium.map((featurePremium, index) => (
+        {featuresPlusMore.map((featurePlusMore, index) => (
           // eslint-disable-next-line react/no-array-index-key
           <Item
-            className="features-premium"
-            key={`${index}-feature`}
+            className="features-plus-more"
+            key={`${index}-feature-plus-more`}
             onClick={() => handleToggle(index)}
           >
-            <Feature>{featurePremium.title}</Feature>
+            <Feature>{featurePlusMore.title}</Feature>
             {isDisplayed === index ? (
-              <DetailsBubble refBubble={ref} feature={featurePremium} />
+              <DetailsBubble refBubble={ref} feature={featurePlusMore} />
             ) : null}
             <InformationButton />
           </Item>
@@ -77,4 +77,4 @@ const FeaturesPremiumList = ({ featuresPremium }: Features) => {
   );
 };
 
-export default FeaturesPremiumList;
+export default FeaturesPlusMoreList;

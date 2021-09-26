@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 
 export interface IconProps {
   width: string;
+  secondary?: boolean;
 }
 
 interface StyledSVGProps {

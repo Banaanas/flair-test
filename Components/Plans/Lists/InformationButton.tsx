@@ -6,9 +6,13 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
-const InformationButton = () => {
+interface InformationButtonProps {
+  handleToggle?: () => void;
+}
+
+const InformationButton = ({ handleToggle }: InformationButtonProps) => {
   return (
-    <Button>
+    <Button onClick={handleToggle}>
       <InformationIcon width="24px" />
     </Button>
   );

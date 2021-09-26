@@ -4,16 +4,18 @@ import PlanPrice from "./PlanPrice";
 import FeaturesList, { paddingLi } from "./Lists/FeaturesList";
 import FeaturesPlusList from "./Lists/FeaturesPlusList";
 import FeaturesPremiumList from "./Lists/FeaturesPremiumList";
+import FeaturesPlusMoreList from "./Lists/FeaturesPlusMoreList";
 
-export const Card = styled.div`
+export const Card = styled.div<{ emphasized: boolean }>`
   width: 180px;
   min-width: 389px;
   min-height: 690px;
+  margin: 16px;
   padding: 42px;
   padding-top: 23px;
   background: white;
+  border: ${({ emphasized }) => (emphasized ? "4px solid #95BCF2" : undefined)};
   border-radius: 4px;
-  margin: 16px;
 `;
 
 const Title = styled.h3`
@@ -53,17 +55,25 @@ const PlanCard = ({
   monthlyPrice,
   features,
   featuresPlus,
+  featuresPlusMore,
   featuresPremium,
+  emphasized,
 }: PlanCarProps) => {
   return (
-    <Card>
+    <Card emphasized={emphasized}>
       <Title>{title}</Title>
       <Description>{description}</Description>
       <PlanPrice price={monthlyPrice} />
       <StyledHR />
 
       {features ? <FeaturesList features={features} /> : null}
+
       {featuresPlus ? <FeaturesPlusList featuresPlus={featuresPlus} /> : null}
+
+      {featuresPlusMore ? (
+        <FeaturesPlusMoreList featuresPlusMore={featuresPlusMore} />
+      ) : null}
+
       {featuresPremium ? (
         <FeaturesPremiumList featuresPremium={featuresPremium} />
       ) : null}

@@ -10,6 +10,7 @@ const essentialPlan: PlanCard = {
   yearlyPrice: monthlyPrices.essentialPlan * 2,
   features: ["Core HR", "Recruiting", "Payroll", "Employee HUB"],
   featuresPlus: undefined,
+  featuresPlusMore: undefined,
   featuresPremium: undefined,
 };
 
