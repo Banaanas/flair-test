@@ -6,35 +6,9 @@ import InformationButton from "./InformationButton";
 import useOnClickOutside from "../../../custom-hooks/useOnClickOutside";
 import DetailsBubble from "./DetailsBubble";
 import appTheme from "../../../styles/appTheme";
+import { IconWrapper, Item, List } from "../../StyledComponents/StyledList";
 
 type Features = Pick<PlanCard, "featuresPlusMore">;
-
-const IconWrapper = styled.div`
-  width: 100%;
-  margin-bottom: 16px;
-`;
-
-const List = styled.ul`
-  all: unset;
-  justify-self: flex-start;
-  width: 100%;
-  list-style: none;
-
-  /* All Items except the last one */
-  .features-plus-more:not(last-of-type) {
-    padding-bottom: ${appTheme.paddingList};
-  }
-`;
-
-const Item = styled.li`
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-`;
-
-const Feature = styled.span``;
 
 const FeaturesPlusMoreList = ({ featuresPlusMore }: Features) => {
   const [isDisplayed, setIsDisplayed] = useState<false | number>(false);
@@ -65,7 +39,7 @@ const FeaturesPlusMoreList = ({ featuresPlusMore }: Features) => {
             key={`${index}-feature-plus-more`}
             onClick={() => handleToggle(index)}
           >
-            <Feature>{featurePlusMore.title}</Feature>
+            <span>{featurePlusMore.title}</span>
             {isDisplayed === index ? (
               <DetailsBubble refBubble={ref} feature={featurePlusMore} />
             ) : null}

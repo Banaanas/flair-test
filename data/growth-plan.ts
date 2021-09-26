@@ -7,7 +7,7 @@ const growthPlan: PlanCard = {
   description:
     "Understand the true pulse of your organization with regular Check-ins and guided 1-on-1s, and show meaningful appreciation when it matters most using High Fives.\n",
   monthlyPrice: monthlyPrices.growthPlan,
-  yearlyPrice: monthlyPrices.growthPlan * 2,
+  yearlyPrice: monthlyPrices.growthPlan * 10,
   features: undefined,
   featuresPlus: [
     {

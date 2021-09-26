@@ -11,6 +11,8 @@ export interface FeaturePlus {
 export type FeaturePlusMore = FeaturePlus;
 export type FeaturePremium = FeaturePlus;
 
+export type PaymentPeriod = "monthly" | "yearly";
+
 export interface PlanCard {
   emphasized: boolean;
   title: "Essential" | "Growth" | "Performance";

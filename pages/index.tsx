@@ -1,16 +1,26 @@
 import styled from "@emotion/styled";
+import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import StyledPageMain from "../Components/StyledComponents/StyledPageMain";
 import StyledSection from "../Components/StyledComponents/StyledSection";
-import PlansButton from "../Components/PlansButton";
-import basePlans from "../data/plans-data";
+import basePlans, { PaymentPeriod } from "../data/plans-data";
 import PlanCard from "../Components/Plans/PlanCard";
 import Rectangle from "../Components/StyledComponents/Rectangle";
 import PlansContainer from "../Components/StyledComponents/StyledPlansContainer";
+import PlansButton from "../Components/Plans/PlansButton";
 
 const SectionTitle = styled.h2`
   margin: 0;
   font-weight: bold;
   font-size: 40px;
+`;
+
+const PlanWrapper = styled(motion.div)`
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
 `;
 
 const ButtonsContainer = styled.div`
@@ -19,20 +29,65 @@ const ButtonsContainer = styled.div`
 `;
 
 const Home = () => {
+  const [displayedPlan, setDisplayedPlan] = useState<PaymentPeriod>("monthly");
+
+  const handleToggleMonthlyPlan = () => {
+    setDisplayedPlan("monthly");
+  };
+
+  const handleToggleYearlyPlan = () => {
+    setDisplayedPlan("yearly");
+  };
+
   return (
     <StyledPageMain>
       <StyledSection>
         <SectionTitle>Base plans</SectionTitle>
         <ButtonsContainer>
-          <PlansButton label="Monthly" />
+          <PlansButton label="Monthly" onClick={handleToggleMonthlyPlan} />
           <Rectangle width={3.52} height={28.51} />
-          <PlansButton label="Yearly" />
+          <PlansButton label="Yearly" onClick={handleToggleYearlyPlan} />
         </ButtonsContainer>
 
         <PlansContainer>
-          {basePlans.map((card) => (
-            <PlanCard key={card.title} {...card} />
-          ))}
+          <AnimatePresence>
+            {displayedPlan === "monthly" ? (
+              <PlanWrapper
+                key="yearly"
+                initial={{ x: 300, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                exit={{ x: -300, opacity: 0 }}
+              >
+                {basePlans.map((card, index) => (
+                  <PlanCard
+                    key={card.title}
+                    paymentPeriod="monthly"
+                    cardIndex={index}
+                    {...card}
+                  />
+                ))}
+              </PlanWrapper>
+            ) : null}
+          </AnimatePresence>
+          <AnimatePresence>
+            {displayedPlan === "yearly" ? (
+              <PlanWrapper
+                key="yearly"
+                initial={{ x: -300, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                exit={{ x: -300, opacity: 0 }}
+              >
+                {basePlans.map((card, index) => (
+                  <PlanCard
+                    key={card.title}
+                    paymentPeriod="yearly"
+                    cardIndex={index}
+                    {...card}
+                  />
+                ))}
+              </PlanWrapper>
+            ) : null}
+          </AnimatePresence>
         </PlansContainer>
       </StyledSection>
     </StyledPageMain>

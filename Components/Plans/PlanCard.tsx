@@ -1,19 +1,28 @@
 import styled from "@emotion/styled";
-import { PlanCard as PlanCarProps } from "../../data/plans-data";
+import {
+  PaymentPeriod,
+  PlanCard as PlanCarInterface,
+} from "../../data/plans-data";
 import PlanPrice from "./PlanPrice";
 import FeaturesList, { paddingLi } from "./Lists/FeaturesList";
 import FeaturesPlusList from "./Lists/FeaturesPlusList";
 import FeaturesPremiumList from "./Lists/FeaturesPremiumList";
 import FeaturesPlusMoreList from "./Lists/FeaturesPlusMoreList";
+import StyledCircle from "../StyledComponents/StyledCircle";
 
-export const Card = styled.div<{ emphasized: boolean }>`
+export const Card = styled.div<{
+  emphasized: boolean;
+  paymentPeriod: PaymentPeriod;
+}>`
+  position: relative;
   width: 180px;
   min-width: 389px;
   min-height: 690px;
   margin: 16px;
   padding: 42px;
   padding-top: 23px;
-  background: white;
+  background: ${({ paymentPeriod }) =>
+    paymentPeriod === "monthly" ? "white" : "#7171d8"};
   border: ${({ emphasized }) => (emphasized ? "4px solid #95BCF2" : undefined)};
   border-radius: 4px;
 `;
@@ -47,37 +56,59 @@ const Button = styled.button`
   background: #1388c9;
   border-radius: 97px;
   cursor: pointer;
+  transition: transform, background, 250ms ease;
+
+  &:hover {
+    background: aqua;
+    transform: scale(1.03);
+  }
 `;
 
+interface PlanCardProps extends PlanCarInterface {
+  paymentPeriod: PaymentPeriod;
+  cardIndex: number;
+}
+
 const PlanCard = ({
+  paymentPeriod,
   title,
   description,
   monthlyPrice,
+  yearlyPrice,
   features,
   featuresPlus,
   featuresPlusMore,
   featuresPremium,
   emphasized,
-}: PlanCarProps) => {
+  cardIndex,
+}: PlanCardProps) => {
   return (
-    <Card emphasized={emphasized}>
+    <Card emphasized={emphasized} paymentPeriod={paymentPeriod}>
+      <StyledCircle cardIndex={cardIndex} />
       <Title>{title}</Title>
       <Description>{description}</Description>
-      <PlanPrice price={monthlyPrice} />
+      {paymentPeriod === "monthly" ? (
+        <PlanPrice paymentPeriod={paymentPeriod} price={monthlyPrice} />
+      ) : (
+        <PlanPrice paymentPeriod={paymentPeriod} price={yearlyPrice} />
+      )}
       <StyledHR />
 
+      {/* Simple Features */}
       {features ? <FeaturesList features={features} /> : null}
 
+      {/* Features Plus */}
       {featuresPlus ? <FeaturesPlusList featuresPlus={featuresPlus} /> : null}
 
+      {/* Features Plus More */}
       {featuresPlusMore ? (
         <FeaturesPlusMoreList featuresPlusMore={featuresPlusMore} />
       ) : null}
 
+      {/* Features Premium */}
       {featuresPremium ? (
         <FeaturesPremiumList featuresPremium={featuresPremium} />
       ) : null}
-
       <Button>Select Plan</Button>
     </Card>
   );

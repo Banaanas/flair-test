@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import Rectangle from "../StyledComponents/Rectangle";
+import { PaymentPeriod } from "../../data/plans-data";
 
 const Container = styled.div`
   display: flex;
@@ -19,13 +20,23 @@ const PeriodContainer = styled.div`
   line-height: 20px;
 `;
 
-const PlanPrice = ({ price }: { price: number }) => {
+interface PlanPriceProps {
+  price: number;
+  paymentPeriod: PaymentPeriod;
+}
+
+const PlanPrice = ({ price, paymentPeriod }: PlanPriceProps) => {
   return (
     <Container>
       <Price>{price}</Price>
       <Rectangle width={6} height={48.59} />
       <PeriodContainer>
-        <div>per month</div>
+        {paymentPeriod === "monthly" ? (
+          <div>per month</div>
+        ) : (
+          <div>per year</div>
+        )}
+
         <div>per employee</div>
       </PeriodContainer>
     </Container>

@@ -6,7 +6,6 @@ const PlansContainer = styled.div`
   align-items: flex-start;
   justify-content: space-around;
   width: 100%;
-  background: yellow;
 `;
 
 export default PlansContainer;

@@ -47,6 +47,7 @@ difficult to define margins, padding between those (inexistant) groups and their
 14 - Design Not optimized for development optimization (and the React components architecture)
     For example, simple features have different layout between Essential and Growth/Performance
 
+15 - Use of Framer Motion when Component Exit. Use of Vanilla CSS also
 
 TODO :
 - Colors

@@ -5,31 +5,9 @@ import { paddingLi } from "./FeaturesList";
 import InformationButton from "./InformationButton";
 import useOnClickOutside from "../../../custom-hooks/useOnClickOutside";
 import DetailsBubble from "./DetailsBubble";
+import { Item, List } from "../../StyledComponents/StyledList";
 
 type Features = Pick<PlanCard, "featuresPlus">;
-
-const List = styled.ul`
-  all: unset;
-  justify-self: flex-start;
-  width: 100%;
-  list-style: none;
-
-  /* All Items except the last one */
-  .features-plus:not(last-of-type) {
-    padding-bottom: ${paddingLi};
-  }
-`;
-
-const Item = styled.li`
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  padding: 0;
-`;
-
-const Feature = styled.span``;
 
 const FeaturesPlusList = ({ featuresPlus }: Features) => {
   const [isDisplayed, setIsDisplayed] = useState<false | number>(false);
@@ -56,7 +34,7 @@ const FeaturesPlusList = ({ featuresPlus }: Features) => {
           key={`${index}-featurePlus`}
           onClick={() => handleToggle(index)}
         >
-          <Feature>{featurePlus.title}</Feature>
+          <span>{featurePlus.title}</span>
           {isDisplayed === index ? (
             <DetailsBubble refBubble={ref} feature={featurePlus} />
           ) : null}
