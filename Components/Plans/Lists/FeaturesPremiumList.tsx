@@ -1,5 +1,4 @@
 import React, { useRef, useState } from "react";
-import styled from "@emotion/styled";
 import { PlanCard } from "../../../data/plans-data";
 import PlusIcon from "../../Icons/PlusIcon";
 import InformationButton from "./InformationButton";

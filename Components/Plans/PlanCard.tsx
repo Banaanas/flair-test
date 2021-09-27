@@ -9,6 +9,7 @@ import FeaturesPlusList from "./Lists/FeaturesPlusList";
 import FeaturesPremiumList from "./Lists/FeaturesPremiumList";
 import FeaturesPlusMoreList from "./Lists/FeaturesPlusMoreList";
 import StyledCircle from "../StyledComponents/StyledCircle";
+import appTheme from "../../styles/appTheme";
 
 export const Card = styled.div<{
   emphasized: boolean;
@@ -22,8 +23,8 @@ export const Card = styled.div<{
   padding: 42px;
   padding-top: 23px;
   background: ${({ paymentPeriod }) =>
-    paymentPeriod === "monthly" ? "white" : "#7171d8"};
-  border: ${({ emphasized }) => (emphasized ? "4px solid #95BCF2" : undefined)};
+    paymentPeriod === "monthly" ? appTheme.colors.white : "#dbe7fb"};
+  border: 3px red solid;
   border-radius: 4px;
 `;
 
@@ -34,15 +35,18 @@ const Title = styled.h3`
 `;
 
 const Description = styled.div`
-  color: #7a7e92;
-  line-height: 28px;
   padding: 28px 0;
+  color: ${appTheme.colors.secondary.darker};
+  line-height: 28px;
   text-align: left;
 `;
 
 const StyledHR = styled.hr`
+  height: 1px;
   margin: 40px 0;
-  background: #cfd1e3;
+  background: ${appTheme.colors.secondary.dark};
+  border: none;
+  outline: none;
 `;
 
 const Button = styled.button`
@@ -50,16 +54,16 @@ const Button = styled.button`
   width: 100%;
   height: 44px;
   margin-top: calc(59px - ${marginLi});
-  color: white;
+  color: ${appTheme.colors.white};
   font-size: 16px;
   text-align: center;
-  background: #1388c9;
+  background: ${appTheme.colors.primary.dark};
   border-radius: 97px;
   cursor: pointer;
   transition: transform, background, 250ms ease;
 
   &:hover {
-    background: aqua;
+    background: #203c86;
     transform: scale(1.03);
   }
 `;

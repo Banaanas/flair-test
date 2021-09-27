@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "@emotion/styled";
 import FeaturesList from "./FeaturesList";
 import {
@@ -6,20 +6,23 @@ import {
   FeaturePlusMore,
   FeaturePremium,
 } from "../../../data/plans-data";
+import appTheme from "../../../styles/appTheme";
 
-const BubbleContainer = styled.div`
+const BubbleContainer = styled.div<{ isMounted: boolean }>`
   position: absolute;
-  top: 650%;
+  top: 670%;
   left: 50%;
   z-index: 1;
   display: flex;
   flex-direction: column;
   width: 130%;
   padding: 25px 25px 15px 25px;
-  color: white;
-  background: #203c86;
+  color: ${appTheme.colors.white};
+  background: ${appTheme.colors.primary.darker};
   border-radius: 5px;
   transform: translate(-50%, -50%);
+  opacity: ${({ isMounted }) => (isMounted ? 1 : 0)};
+  transition: opacity 250ms ease-out;
 
   &::before {
     position: absolute;
@@ -48,7 +51,7 @@ const DetailsDescription = styled.div`
 
 const DetailsLink = styled.a`
   margin-top: 16px;
-  color: #95bcf2;
+  color: ${appTheme.colors.primary.default};
   font-size: 15px;
   text-transform: uppercase;
 `;
@@ -59,8 +62,14 @@ interface BubbleProps {
 }
 
 const DetailsBubble = ({ refBubble, feature }: BubbleProps) => {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   return (
-    <BubbleContainer ref={refBubble}>
+    <BubbleContainer ref={refBubble} isMounted={isMounted}>
       <DetailsTitle>{feature.title}</DetailsTitle>
       <DetailsDescription>{feature.description}</DetailsDescription>
       <FeaturesList features={feature.list} secondary />

@@ -31,7 +31,8 @@ const Item = styled.li`
   &:hover {
     color: #203c86;
 
-    * {
+    /* Change opacity for Information Icon */
+    .information-icon > * {
       opacity: 1;
     }
   }

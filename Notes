@@ -49,6 +49,9 @@ difficult to define margins, padding between those (inexistant) groups and their
 
 15 - Use of Framer Motion when Component Exit. Use of Vanilla CSS also
 
+16 - One of the three cards did not have horizontal bar
+17 - Also, all three cards did not have the same box-shadow, so I decided to put only the same
+
 TODO :
 - Colors
 - Fonts
@@ -64,4 +67,7 @@ TODO :
 - shadow cards
 - Gilroy Fonts
 - Regarder console avant déploiement
+- Regarder DetailsBubble
 - Delete Notes
+
+

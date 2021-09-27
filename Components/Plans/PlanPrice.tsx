@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import Rectangle from "../StyledComponents/Rectangle";
 import { PaymentPeriod } from "../../data/plans-data";
+import appTheme from "../../styles/appTheme";
 
 const Container = styled.div`
   display: flex;
@@ -15,6 +16,7 @@ const Price = styled.div`
 const PeriodContainer = styled.div`
   display: flex;
   flex-direction: column;
+  color: ${appTheme.colors.secondary.darker};
   font-weight: normal;
   font-size: 15px;
   line-height: 20px;

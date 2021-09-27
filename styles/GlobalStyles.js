@@ -1,7 +1,6 @@
 import { css, Global } from "@emotion/react";
 import colors from "./CSS-variables/colors";
 import fontProperties from "./CSS-variables/font-properties";
-import elevations from "./CSS-variables/elevations";
 import appTheme from "./appTheme";
 
 // Emotion Global Styles
@@ -32,9 +31,9 @@ const GlobalStyles = () => (
         min-width: ${appTheme.globalMinWidth};
         height: 100%;
         color: ${appTheme.colors.textDefault};
-        font-family: ${appTheme.fontFamily.openSans},
+        font-family: ${appTheme.fontFamily.gilroy},
           ${appTheme.fontFamily.alternativeFonts};
-        background-color: ${appTheme.colors.primary.default};
+        background: ${appTheme.colors.gradient1};
       }
 
       #__next {
@@ -64,7 +63,7 @@ const GlobalStyles = () => (
       h6,
       strong {
         font-weight: ${appTheme.fontWeight.bold};
-        font-family: ${appTheme.fontFamily.roboto},
+        font-family: ${appTheme.fontFamily.gilroy},
           ${appTheme.fontFamily.alternativeFonts};
       }
 
@@ -76,19 +75,6 @@ const GlobalStyles = () => (
       h6,
       p {
         text-rendering: optimizeLegibility;
-      }
-
-      p {
-        margin-bottom: 1.5em;
-        font-size: ${appTheme.fontSizes.lg}
-      }
-
-      em {
-        font-style: italic;
-      }
-
-      strong {
-        font-weight: ${appTheme.fontWeight.bold};
       }
 
       /* Images - Alt Attribute Text */
@@ -141,14 +127,10 @@ const GlobalStyles = () => (
       }
 
       /* Fonts */
-    /*  @font-face {
-        font-family: "Roboto";
-        src: url("./fonts/Roboto-Regular.ttf");
-      }
       @font-face {
-        font-family: "Open Sans";
-        src: url("./fonts/OpenSans-Regular.ttf");
-      }*/
+        font-family: "Gilroy";
+        src: url("./fonts/Gilroy-Medium.ttf");
+      }
 
       /* CSS Variables */
 
@@ -156,7 +138,6 @@ const GlobalStyles = () => (
       :root {
         ${fontProperties}
         ${colors}
-        ${elevations}
       }
     `}
   />

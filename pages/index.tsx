@@ -44,13 +44,21 @@ const Home = () => {
       <StyledSection>
         <SectionTitle>Base plans</SectionTitle>
         <ButtonsContainer>
-          <PlansButton label="Monthly" onClick={handleToggleMonthlyPlan} />
+          <PlansButton
+            label="Monthly"
+            selected={displayedPlan === "monthly"}
+            onClick={handleToggleMonthlyPlan}
+          />
           <Rectangle width={3.52} height={28.51} />
-          <PlansButton label="Yearly" onClick={handleToggleYearlyPlan} />
+          <PlansButton
+            label="Yearly"
+            selected={displayedPlan === "yearly"}
+            onClick={handleToggleYearlyPlan}
+          />
         </ButtonsContainer>
 
         <PlansContainer>
-          <AnimatePresence exitBeforeEnter>
+          <AnimatePresence initial={false} exitBeforeEnter>
             {displayedPlan === "monthly" ? (
               <PlanWrapper /* AnimatePresence Key */
                 key="monthly"

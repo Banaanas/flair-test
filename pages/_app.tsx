@@ -5,9 +5,7 @@ import Layout from "../Components/Layout";
 
 const App = ({ Component, pageProps }: AppProps) => (
   <Layout>
-    <AnimatePresence initial={false} exitBeforeEnter>
       <Component {...pageProps} />
-    </AnimatePresence>
   </Layout>
 );
 
