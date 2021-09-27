@@ -10,7 +10,7 @@ import appTheme from "../../../styles/appTheme";
 
 const BubbleContainer = styled.div<{ isMounted: boolean }>`
   position: absolute;
-  top: 670%;
+  top: 640%;
   left: 50%;
   z-index: 1;
   display: flex;

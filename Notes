@@ -53,19 +53,8 @@ difficult to define margins, padding between those (inexistant) groups and their
 17 - Also, all three cards did not have the same box-shadow, so I decided to put only the same
 
 TODO :
-- Colors
-- Fonts
-- Shadows
-- Border Radius
 - Favicon
 - Optimize Files and Weight
-- Responsive
-- Animations
-- Hover effect to buttons, for example
-- Refactor Global CSS and delete some rules for colors, font-size, etc.
-- corner circles
-- shadow cards
-- Gilroy Fonts
 - Regarder console avant déploiement
 - Regarder DetailsBubble
 - Delete Notes

@@ -30,6 +30,7 @@ export const Card = styled.div<{
   @media ${appTheme.queries.tabletAndUp} {
     width: 390px;
   }
+  box-shadow: 0 43.2593px 60.563px rgba(0, 0, 0, 0.05);
 `;
 
 const Title = styled.h3`
