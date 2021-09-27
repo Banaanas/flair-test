@@ -24,7 +24,8 @@ export const Card = styled.div<{
   padding-top: 23px;
   background: ${({ paymentPeriod }) =>
     paymentPeriod === "monthly" ? appTheme.colors.white : "#dbe7fb"};
-  border: 3px red solid;
+  border: ${({ emphasized }) =>
+    emphasized ? `4px solid ${appTheme.colors.primary.default}` : "none"};
   border-radius: 4px;
 `;
 
