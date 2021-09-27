@@ -141,14 +141,14 @@ const GlobalStyles = () => (
       }
 
       /* Fonts */
-      @font-face {
+    /*  @font-face {
         font-family: "Roboto";
         src: url("./fonts/Roboto-Regular.ttf");
       }
       @font-face {
         font-family: "Open Sans";
         src: url("./fonts/OpenSans-Regular.ttf");
-      }
+      }*/
 
       /* CSS Variables */
 

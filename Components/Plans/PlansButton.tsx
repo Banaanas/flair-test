@@ -7,16 +7,21 @@ const Button = styled.button`
 
   ::after {
     display: block;
-    width: 90%;
+    width: 100%;
     height: 3px;
     background: blue;
     border-radius: 4px;
     transform: scale(0);
+    transform-origin: center left;
     transition: transform 250ms ease-out;
     content: "";
   }
   :hover::after {
     transform: scale(1);
+  }
+
+  &:active {
+    background: aqua;
   }
 `;
 

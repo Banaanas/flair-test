@@ -50,10 +50,10 @@ const Home = () => {
         </ButtonsContainer>
 
         <PlansContainer>
-          <AnimatePresence>
+          <AnimatePresence exitBeforeEnter>
             {displayedPlan === "monthly" ? (
-              <PlanWrapper
-                key="yearly"
+              <PlanWrapper /* AnimatePresence Key */
+                key="monthly"
                 initial={{ x: 300, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 exit={{ x: -300, opacity: 0 }}
@@ -68,11 +68,9 @@ const Home = () => {
                 ))}
               </PlanWrapper>
             ) : null}
-          </AnimatePresence>
-          <AnimatePresence>
             {displayedPlan === "yearly" ? (
               <PlanWrapper
-                key="yearly"
+                key="yearly" /* AnimatePresence Key */
                 initial={{ x: -300, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 exit={{ x: -300, opacity: 0 }}
