@@ -16,7 +16,7 @@ const List = styled.ul`
   .features-plus:not(last-of-type),
   .features-plus-more:not(last-of-type),
   .features-premium:not(last-of-type) {
-    padding-bottom: ${appTheme.paddingList};
+    margin-bottom: ${appTheme.marginListItem};
   }
 `;
 
@@ -26,6 +26,15 @@ const Item = styled.li`
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  cursor: pointer;
+
+  &:hover {
+    color: #203c86;
+
+    * {
+      opacity: 1;
+    }
+  }
 `;
 
 export { IconWrapper, Item, List };

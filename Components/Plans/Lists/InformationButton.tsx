@@ -3,7 +3,6 @@ import InformationIcon from "../../Icons/InformationIcon";
 
 const Button = styled.button`
   all: unset;
-  cursor: pointer;
 `;
 
 interface InformationButtonProps {

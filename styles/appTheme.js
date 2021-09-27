@@ -131,7 +131,7 @@ const appTheme = {
   globalMaxWidth: "1440px",
   queries: QUERIES,
 
-  paddingList: "16px",
+  marginListItem: "16px",
 };
 
 export default appTheme;

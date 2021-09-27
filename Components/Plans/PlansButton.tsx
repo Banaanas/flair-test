@@ -12,7 +12,7 @@ const Button = styled.button`
     background: blue;
     border-radius: 4px;
     transform: scale(0);
-    transform-origin: center left;
+    transform-origin: left;
     transition: transform 250ms ease-out;
     content: "";
   }

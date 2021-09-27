@@ -4,7 +4,7 @@ import {
   PlanCard as PlanCarInterface,
 } from "../../data/plans-data";
 import PlanPrice from "./PlanPrice";
-import FeaturesList, { paddingLi } from "./Lists/FeaturesList";
+import FeaturesList, { marginLi } from "./Lists/FeaturesList";
 import FeaturesPlusList from "./Lists/FeaturesPlusList";
 import FeaturesPremiumList from "./Lists/FeaturesPremiumList";
 import FeaturesPlusMoreList from "./Lists/FeaturesPlusMoreList";
@@ -49,7 +49,7 @@ const Button = styled.button`
   all: unset;
   width: 100%;
   height: 44px;
-  margin-top: calc(59px - ${paddingLi});
+  margin-top: calc(59px - ${marginLi});
   color: white;
   font-size: 16px;
   text-align: center;

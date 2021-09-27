@@ -9,7 +9,7 @@ import {
 
 const BubbleContainer = styled.div`
   position: absolute;
-  top: 440%;
+  top: 650%;
   left: 50%;
   z-index: 1;
   display: flex;

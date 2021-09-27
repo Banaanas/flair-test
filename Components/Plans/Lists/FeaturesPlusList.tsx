@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import React, { useRef, useState } from "react";
 import { PlanCard } from "../../../data/plans-data";
-import { paddingLi } from "./FeaturesList";
+import { marginLi } from "./FeaturesList";
 import InformationButton from "./InformationButton";
 import useOnClickOutside from "../../../custom-hooks/useOnClickOutside";
 import DetailsBubble from "./DetailsBubble";
