@@ -1,6 +1,35 @@
 ***** NOTES *****
 
 
+1 - Use of Next.js and TypeScript
+2 - Semantic HTML
+3 - Pure CSS - Except for the Monthly/Yearly Plan Animation
+    I've used Framer Motion, a library that allowed me to animate
+    between two components rendering.
+    It is also the only way to build a physics-based animation (spring effect).
+
+    It could perfectly have been done with normal CSS, except that
+    Framer Motion allow us to lighten the DOM using unmounting, and also
+
+
+4 - Multiple Interactions (animation - transitions) :
+    - Mounting/Unmounting animation for Monthly.
+    - display List Item Details Bubble
+    - hovering List Items
+
+    5 - Everything is Responsive
+
+   All margin, padding, colors, font, shadow have been respected.
+
+6 - Colors are mostly used as CSS Variables (the best for performance)
+
+
+7 - Use of React Components to make everything reusable (DRY) and maintainable / scalable
+
+// Design System
+I've been trying to stick to the Figma Document you sent to me.
+The figma is based on 1 Desktop format:
+
 1 - CSS Variables
 
 2 - No design system - Hat to extract all design style by myself (colors, font-size, etc)
@@ -53,7 +82,6 @@ difficult to define margins, padding between those (inexistant) groups and their
 17 - Also, all three cards did not have the same box-shadow, so I decided to put only the same
 
 TODO :
-- Optimize Files and Weight
 - Regarder console avant déploiement
 - Regarder DetailsBubble
 - Delete Notes

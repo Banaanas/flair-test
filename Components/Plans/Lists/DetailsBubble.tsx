@@ -27,7 +27,7 @@ const BubbleContainer = styled.div<{ isMounted: boolean }>`
   &::before {
     position: absolute;
     top: -12px;
-    right: 70px;
+    right: 60px;
     width: 0;
     height: 0;
     border-right: 13px solid transparent;
@@ -35,6 +35,10 @@ const BubbleContainer = styled.div<{ isMounted: boolean }>`
     border-left: 13px solid transparent;
     border-radius: 4px;
     content: "";
+
+    @media ${appTheme.queries.tabletAndUp} {
+      right: 70px;
+    }
   }
 `;
 
