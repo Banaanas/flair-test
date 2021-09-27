@@ -36,6 +36,7 @@ const FeaturesPremiumList = ({ featuresPremium }: Features) => {
             className="features-premium"
             key={`${index}-feature`}
             onClick={() => handleToggle(index)}
+            bold
           >
             <span>{featurePremium.title}</span>
             {isDisplayed === index ? (

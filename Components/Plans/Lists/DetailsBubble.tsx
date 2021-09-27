@@ -45,6 +45,7 @@ const DetailsTitle = styled.h4`
 
 const DetailsDescription = styled.div`
   margin: 16px 0;
+  font-weight: normal;
   font-size: 15px;
   line-height: 27px;
 `;

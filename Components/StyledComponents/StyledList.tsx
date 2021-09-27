@@ -20,12 +20,13 @@ const List = styled.ul`
   }
 `;
 
-const Item = styled.li`
+const Item = styled.li<{ bold?: boolean }>`
   position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  font-weight: ${({ bold }) => (bold ? "bold" : "normal")};
   cursor: pointer;
 
   &:hover {

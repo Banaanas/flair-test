@@ -12,6 +12,7 @@ const StyledPageMain = styled(motion.main)`
   font-weight: bold;
   text-align: justify;
   transition: filter, 300ms ease;
+  overflow-x: hidden;
 `;
 
 export default StyledPageMain;

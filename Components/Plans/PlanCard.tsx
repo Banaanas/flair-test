@@ -16,8 +16,7 @@ export const Card = styled.div<{
   paymentPeriod: PaymentPeriod;
 }>`
   position: relative;
-  width: 180px;
-  min-width: 389px;
+  width: 320px;
   min-height: 690px;
   margin: 16px;
   padding: 42px;
@@ -27,6 +26,10 @@ export const Card = styled.div<{
   border: ${({ emphasized }) =>
     emphasized ? `4px solid ${appTheme.colors.primary.default}` : "none"};
   border-radius: 4px;
+
+  @media ${appTheme.queries.tabletAndUp} {
+    width: 390px;
+  }
 `;
 
 const Title = styled.h3`
@@ -38,6 +41,7 @@ const Title = styled.h3`
 const Description = styled.div`
   padding: 28px 0;
   color: ${appTheme.colors.secondary.darker};
+  font-weight: normal;
   line-height: 28px;
   text-align: left;
 `;
@@ -56,6 +60,7 @@ const Button = styled.button`
   height: 44px;
   margin-top: calc(59px - ${marginLi});
   color: ${appTheme.colors.white};
+  font-weight: normal;
   font-size: 16px;
   text-align: center;
   background: ${appTheme.colors.primary.dark};

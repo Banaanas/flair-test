@@ -3,13 +3,14 @@ import appTheme from "../../styles/appTheme";
 
 const Button = styled.button<{ selected: boolean }>`
   all: unset;
+  font-weight: normal;
   font-size: 15px;
   cursor: pointer;
 
   ::after {
     display: block;
     width: 100%;
-    height: 3px;
+    height: 2px;
     background: ${({ selected }) =>
       selected ? appTheme.colors.black : appTheme.colors.primary.default};
     border-radius: 4px;
