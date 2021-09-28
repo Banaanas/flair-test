@@ -39,7 +39,6 @@ const Home = () => {
     setDisplayedPlan("yearly");
   };
 
-  console.log("hola");
   return (
     <StyledPageMain>
       <StyledSection>
