@@ -31,7 +31,7 @@ const BubbleContainer = styled.div<{ isMounted: boolean }>`
   &::before {
     position: absolute;
     top: -12px;
-    right: 60px;
+    right: 24px;
     width: 0;
     height: 0;
     border-right: 13px solid transparent;
