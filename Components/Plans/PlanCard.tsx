@@ -18,19 +18,21 @@ export const Card = styled.div<{
   position: relative;
   width: 320px;
   min-height: 690px;
-  margin: 16px;
-  padding: 42px;
+  margin: 16px 0;
+  padding: 16px;
   padding-top: 23px;
   background: ${({ paymentPeriod }) =>
     paymentPeriod === "monthly" ? appTheme.colors.white : "#dbe7fb"};
   border: ${({ emphasized }) =>
     emphasized ? `4px solid ${appTheme.colors.primary.default}` : "none"};
   border-radius: 4px;
+  box-shadow: 0 43.2593px 60.563px rgba(0, 0, 0, 0.05);
 
   @media ${appTheme.queries.tabletAndUp} {
     width: 390px;
+    padding: 42px;
+    margin: 16px;
   }
-  box-shadow: 0 43.2593px 60.563px rgba(0, 0, 0, 0.05);
 `;
 
 const Title = styled.h3`

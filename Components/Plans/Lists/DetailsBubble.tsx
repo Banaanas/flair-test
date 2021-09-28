@@ -15,7 +15,7 @@ const BubbleContainer = styled.div<{ isMounted: boolean }>`
   z-index: 1;
   display: flex;
   flex-direction: column;
-  width: 130%;
+  width: 100%;
   padding: 25px 25px 15px 25px;
   color: ${appTheme.colors.white};
   background: ${appTheme.colors.primary.darker};
@@ -23,6 +23,10 @@ const BubbleContainer = styled.div<{ isMounted: boolean }>`
   transform: translate(-50%, -50%);
   opacity: ${({ isMounted }) => (isMounted ? 1 : 0)};
   transition: opacity 250ms ease-out;
+
+  @media ${appTheme.queries.tabletAndUp} {
+    width: 130%;
+  }
 
   &::before {
     position: absolute;
