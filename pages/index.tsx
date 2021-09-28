@@ -8,7 +8,6 @@ import PlanCard from "../Components/Plans/PlanCard";
 import Rectangle from "../Components/StyledComponents/Rectangle";
 import PlansContainer from "../Components/StyledComponents/StyledPlansContainer";
 import PlansButton from "../Components/Plans/PlansButton";
-import { Head } from "next/document";
 
 const SectionTitle = styled.h2`
   margin: 0;

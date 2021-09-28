@@ -9,10 +9,10 @@ const StyledPageMain = styled(motion.main)`
   justify-content: center;
   width: 100%;
   height: auto;
+  overflow-x: hidden;
   font-weight: bold;
   text-align: justify;
   transition: filter, 300ms ease;
-  overflow-x: hidden;
 `;
 
 export default StyledPageMain;
