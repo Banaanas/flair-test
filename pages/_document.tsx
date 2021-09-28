@@ -18,6 +18,8 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          {/* eslint-disable-next-line @next/next/no-title-in-document-head */}
+          <title>Cyril | Flair HR</title>
           <meta charSet="utf-8" />
           <meta name="theme-color" content="#ffffff" />
           <link rel="icon" href="/favicons/favicon.ico" />
