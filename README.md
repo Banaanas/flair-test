@@ -1,34 +1,91 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<!--
+*** Useful links for the README.md file's redaction
+*** https://shields.io/ - Shields.
+*** https://emojipedia.org/ - Emojis.
+*** https://github.com/othneildrew/Best-README-Template - General Inspiration for this file.
+-->
 
-## Getting Started
+<!-- PROJECT SHIELDS -->
+<!--
+*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
+*** See the bottom of this document for the declaration of the reference variables.
+*** This is an optional, concise syntax to use.
+*** https://www.markdownguide.org/basic-syntax/#reference-style-links
+*** It is possible to use a personal logo, as for the Personal Website shield :
+*** Convert the logo to base 64 (https://b64.io/), then include it as explained on
+*** https://shields.io/.
+-->
 
-First, run the development server:
+[![Personal Website][personal-website-shield]][personal-website-url]
+[![Mail][personal-email-shield]](mailto:cyrilo.dev@gmail.com)
+[![LinkedIn][linkedin-shield]][linkedin-url]
+[![MIT License][license-shield]][license-url]
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+<br/>
+<!-- PROJECT LOGO -->
+<br/>
+<p align="center">
+      <a href="https://flair-test.vercel.app/">
+        <img src="./public/flair-icon.png" alt="Flair's Logo" width="300">
+    </a>
+</p>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<h1 align="center">Flair HR - Pricing Plans</h1>
+<h3 align="center">TypeScript - React - Next.js</h3>
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+<p align="center">
+    From Figma to Code<br/><br/>
+    <a href="https://flair-test.vercel.app/">Live Demo</a><br/><br/>
+</p>
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+<!-- PRINCIPAL FEATURES -->
 
-## Learn More
+#### Principal Features
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+    1. Tech stack : Next.js / TypeScript / Semantic HTML / CSS
+Pour l’animation slide entre les plans mensuel et annuel,a library that allowed me to animate between two components rendering. It is also the only way to build a physics-based animation (spring effect).
+It could perfectly have been done with normal CSS, except that Framer Motion allow us to lighten the DOM using unmounting.
+For the slide animation between the monthly and yearly plans, I used a library, Framer Motion, which allows to animate between the unmounting of two components (impossible in normal CSS). It's also the only way to build an animation based on physics (spring effect). This could have been done perfectly well with normal CSS, except that Framer Motion allows us to lighten the DOM by unmounting components we don’t use.
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+    2. React
+The components of the application have been designed to be reusable. For example, for Cards or Lists components. Moreover, I extracted the SVG icons from the Figma template and converted them into modular components.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+    3. React - Custom hook
+       When a Details Bubble is open, the custom hook allows you to close it when you click outside the bubble.
+
+    4. Interactive and smooth app 
+
+        ◦ mounting/unmounting animation for Monthly and Yearly Plans.
+        ◦ click on Information Icon to display List Item Details Bubble
+        ◦ transition and hovering effects
+
+
+    5. Fully responsive app
+You can use the app on smartphone as well as on computer.
+
+    6. Stick to Figma Template
+       Je suis resté fidèle au template Figma : les couleurs, la police, les dimensions (padding, margin, etc.), les ombres utilisées sont celles du modèle. I wanted to stick to the Figma template. All colors, font, dimensions (padding, margin, etc.), shadows are those of the template.
+
+I used the dimensions of the template (1440 * 940px). That's why, on computer, it is possible that a scrollbar appears in height.
+
+    7. Design
+It seems that the template does not use any Grid System for the spaces (margin, padding). That's why you'll encounter some precise and arbitrary dimensions (like 389px or different left and right margins for one same element).
+I personnaly use use the 8pt grid, which allows me to have a harmonized layout for the spaces (space must be divisibles by 8 or 4px).
+
+In addition, the Figma elements do not appear to have been organized into groups (or are grouped inconsistently), which made defining the spaces difficult.
+
+       Also, since the Figma model does not use the Figma’s autolayout function. Figma's autolayout feature is very useful to the developer (and designer) as it automates and harmonizes spaces.
+
+    8. Design System
+       While sticking to the Figma model, I tried to build a Design System through my code. This is what React and Emotion.js allow us to do.
+I used an Emotion theme, within which I integrated reusable properties (colors, dimensions, etc.) throughout the application. This way, the gaintainability and scalability of the application gets a lot easier.
+The colors referenced in the Emotion theme refer to CSS variables. This allows to benefit from the performance of pure CSS, but also from TypeScript autocompletion (with the Theme object).
+
+
+    9. Browser Support
+The application has been designed to support most browsers. Some modern CSS properties have not been used because they are not sufficientely supported (eg. Flex gap).
