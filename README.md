@@ -34,8 +34,8 @@ When a Details Bubble is open, the custom hook allows you to close it when you c
 
     4. Interactive and smooth app
 
-◦ mounting/unmounting animation for Monthly and Yearly Plans.
-◦ click on Information Icon to display List Item Details Bubble
+◦ mounting/unmounting animation for Monthly and Yearly Plans </br>
+◦ click on Information Icon to display List Item Details Bubble </br>
 ◦ transition and hovering effects
 
 
