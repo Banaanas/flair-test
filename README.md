@@ -28,7 +28,6 @@ For the slide animation between the monthly and yearly plans, I used a library, 
     2. React
 The components of the application have been designed to be reusable. For example, for Cards or Lists components. Moreover, I extracted the SVG icons from the Figma template and converted them into modular components.
 
-
     3. React - Custom hook
 When a Details Bubble is open, the custom hook allows you to close it when you click outside the bubble.
 
@@ -37,7 +36,6 @@ When a Details Bubble is open, the custom hook allows you to close it when you c
 ◦ mounting/unmounting animation for Monthly and Yearly Plans </br>
 ◦ click on Information Icon to display List Item Details Bubble </br>
 ◦ transition and hovering effects
-
 
     5. Fully responsive app
 You can use the app on smartphone as well as on computer.
